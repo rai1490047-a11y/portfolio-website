@@ -1,0 +1,609 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+}
+
+:root {
+    --bg-color: #0c1022;
+    --text-color: #ffffff;
+    --main-color: #00d1ff;
+    --second-bg-color: #1f2441;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 8rem 7% 2rem;
+}
+
+.heading {
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+.home-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: box-shadow 0.3s ease;
+}
+
+.home-btn:hover {
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* Header Styling Start */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 7%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid var(--second-bg-color);
+}
+
+.logo {
+    font-size: 2rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--main-color);
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-left: 2rem;
+    transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    display: none; /* Hide on large screens */
+}
+/* Header Styling End */
+
+/* Home Section Start */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.home-content h2 {
+    font-size: 2rem;
+}
+
+.home-content h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.home-content h1 span {
+    color: var(--main-color);
+}
+
+.home-content p {
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+}
+
+.home-img img {
+    width: 30vw;
+    max-width: 400px;
+    height: 500px;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+/* Home Section End */
+
+/* About Section Start */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background: var(--second-bg-color);
+}
+
+.about-img img {
+    width: 30vw;
+    max-width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.about-content h3 span {
+    color: var(--main-color);
+}
+.about-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+/*About Section End*/
+
+
+/* ========================================= */
+/*      SERVICES SECTION STYLING Start             */
+/* ========================================= */
+
+/* Google Font (Pixelated Font) - Isko CSS file ke top par rakhein */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* --- Section Styling --- */
+.services-section {
+    background-color: #0c1022; /* Dark blue background */
+    color: #ffffff;
+    padding: 100px 5%; /* Section ke upar-neeche space */
+    font-family: Arial, sans-serif; /* Default font for paragraph */
+}
+
+.section-heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    text-transform: uppercase;
+}
+
+.section-heading span {
+    color: #00d1ff; /* Cyan color for "SERVICES" */
+}
+
+/* --- Cards Container --- */
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Taki choti screen par cards neeche aa jayein */
+    gap: 2.5rem; /* Cards ke beech mein space */
+}
+
+/* --- Individual Service Card --- */
+.service-card {
+    background-color: #1f2441; /* Card ka background color */
+    padding: 40px 30px;
+    height: 400px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1 1 300px; /* Flex property for responsiveness */
+    max-width: 350px;
+    border: 2px solid transparent; /* Shuru mein border transparent rakhein */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Glow effect ke liye zaroori */
+}
+
+/* Card par hover karne ka effect */
+.service-card:hover {
+    transform: translateY(-10px); /* Card thoda upar uthega */
+    border-color: #00d1ff; /* Hover par border dikhega */
+}
+
+/* --- Glowing Animation --- */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    /* Glow effect ke liye box-shadow */
+    box-shadow: 0 0 15px rgba(0, 209, 255, 0.5), 
+                0 0 30px rgba(0, 209, 255, 0.3);
+    
+    /* Animation definition */
+    animation: glow 3s linear infinite;
+    opacity: 0; /* By default glow chupa hua hai */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover::before {
+    opacity: 1; /* Hover par glow dikhega */
+}
+
+/* Keyframe animation for glowing effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px rgba(0, 209, 255, 0.5), 0 0 30px rgba(0, 209, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 209, 255, 0.8), 0 0 60px rgba(0, 209, 255, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(0, 209, 255, 0.5), 0 0 30px rgba(0, 209, 255, 0.3);
+    }
+}
+
+/* --- Card Content Styling --- */
+.service-card i {
+    font-size: 3rem;
+    color: #00d1ff;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #c0c0c0; /* Halki white text */
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #00d1ff;
+    color: #0c1022;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: lowercase;
+    transition: box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 15px #00d1ff;
+}
+
+/* ========================================= */
+/*      RESPONSIVE DESIGN FOR SERVICES       */
+/* ========================================= */
+@media (max-width: 768px) {
+    .section-heading {
+        font-size: 2.2rem; /* Mobile par heading choti karein */
+    }
+
+    /* Isse cards mobile par ek ke neeche ek aayenge */
+    .services-container {
+        flex-direction: column;
+    }
+}
+/* ========================================= */
+/*       SERVICES section End       */
+/* ========================================= */
+
+
+
+/* ========================================= */
+/*      SKILLS SECTION STYLING Start            */
+/* ========================================= */
+
+/* Agar aapne pehle se nahi kiya hai, toh pixel font import karein */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.skills-section {
+    padding: 100px 7%;
+    background-color: #0c1022; /* Aapka dark background */
+}
+
+/* Heading ki styling thodi alag hai is design me */
+.skills-section .section-heading {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 60px;
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    text-transform: uppercase;
+}
+
+.skills-section .section-heading span {
+    color: #00d1ff; /* Is section me span ka color bhi white hai */
+}
+
+.skills-container {
+    max-width: 800px; /* Skills ki max-width set karein */
+    margin: 2rem auto 0; /* Heading se space aur center me laaye */
+}
+
+.skill-item {
+    margin-bottom: 2rem; /* Har skill ke beech me space */
+}
+
+.skill-name {
+    font-family: 'Press+Start+2P', cursive;
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Progress bar ka outer container */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #313131; /* Dark grey background */
+    border-radius: 10px;
+    overflow: hidden; /* Yeh zaroori hai taki inner bar bahar na nikle */
+}
+
+/* Progress bar ka inner, bhara hua hissa */
+.progress-level {
+    height: 100%;
+    border-radius: 10px;
+    
+    /* Blue-to-Green Gradient */
+    background: linear-gradient(90deg, #007bff, #00ff8c);
+
+    /* Animation */
+    width: 0; /* Shuru me width 0 rakhein */
+    animation: fillBar 2s ease-out forwards;
+    animation-delay: 0.3s; /* Thodi der baad animation shuru ho */
+}
+
+/* Keyframe animation jo width ko 0 se uski actual value tak le jayega */
+@keyframes fillBar {
+    from {
+        width: 0%;
+    }
+    /* 'to' state CSS me di hui width (e.g., 95%) se aayegi */
+}
+
+
+/* ========================================= */
+/*      RESPONSIVE DESIGN FOR SKILLS         */
+/* ========================================= */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 80px 5%;
+    }
+
+    .skills-section .section-heading {
+        font-size: 1.5rem;
+        width: 100%; /* Mobile par heading poori width le */
+        text-align: center;
+        border-bottom: none; /* Mobile par line hata dein */
+        margin-bottom: 40px;
+    }
+
+    .skills-section .section-heading span {
+        color: var(--main-color); /* Mobile par "SKILLS" ko cyan kar dein, jaise baki sections me */
+    }
+}
+
+
+/* ========================================= */
+/*      SKILLS SECTION STYLING End          */
+/* ========================================= */
+
+
+
+/* Contact Section Start */
+.contact-form {
+    text-align: center;
+}
+
+.contact-form form {
+    max-width: 700px;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact-form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1rem;
+    color: var(--text-color);
+    background: var(--second-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+.contact-form .input-box input {
+    width: 49%;
+}
+
+/* Contact Section End */
+
+/* Footer Section Start */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 7%;
+    background: var(--second-bg-color);
+}
+
+.social {
+    margin-bottom: 1.5rem;
+}
+
+.social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--main-color);
+    margin: 0 0.5rem;
+    transition: 0.3s;
+}
+
+.social a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.footer .list {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.footer .list a {
+    color: var(--text-color);
+    padding: 0 1rem;
+}
+
+.footer .list a:hover {
+    color: var(--main-color);
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+}
+/* Footer Section End */
+
+
+
+
+
+/* ========================================= */
+/*      RESPONSIVE DESIGN (Media Queries) Start    */
+/* ========================================= */
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.5rem 3%;
+    }
+    section {
+        padding: 8rem 3% 2rem;
+    }
+}
+
+@media (max-width: 780px) {
+    /* Hamburger Menu Activation */
+    #menu-icon {
+        display: block; /* Show the icon */
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: 1px solid rgba(0,0,0, .2);
+        display: none; /* Hide the menu by default */
+    }
+
+    .navbar.active {
+        display: block; /* Show menu when active */
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .navbar a {
+        display: block;
+        font-size: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    /* Section Adjustments */
+    .home, .about {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 3.5rem;
+    }
+
+    .home-img img,
+    .about-img img {
+        width: 70vw; /* Make images larger on mobile */
+        margin-top: 2rem;
+    }
+    
+    .about {
+        gap: 2rem;
+    }
+
+    .contact-form .input-box input {
+        width: 100%;
+    }
+}
+/* ========================================= */
+/*      RESPONSIVE DESIGN (Media Queries) End   */
+/* ========================================= */
+
+
+
+
+
+
+
+
+
+
+
+
+
